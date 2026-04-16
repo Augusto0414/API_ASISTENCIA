@@ -6,16 +6,16 @@ export const swaggerOptions: SwaggerOptions = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Mi API",
+      title: "API de Asistencia",
       version: "1.0.0",
-      description: "Documentación API RESTful",
+      description: "Documentación API RESTful para gestión de asistencia",
       contact: {
         name: "Soporte API",
         url: "https://www.instagram.com/augusto0414/",
       },
     },
   },
-  apis: ["./src/routes/*.ts"],
+  apis: ["./src/routes/*.ts", "./dist/routes/*.js"],
 };
 
 export const swaggerSetup = () => {
