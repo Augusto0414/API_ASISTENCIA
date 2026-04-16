@@ -25,8 +25,8 @@ API RESTful para gestión de asistencia de estudiantes, profesores, clases y dat
 1. **Clonar**
 
    ```bash
-   git clone https://github.com/Augusto0414/taller.git
-   cd taller
+   git clone https://github.com/Augusto0414/API_ASISTENCIA.git
+   cd API_ASISTENCIA
    npm install
    ```
 
