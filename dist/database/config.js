@@ -20,8 +20,11 @@ const pool = new typeorm_1.DataSource({
     entities: [Estudiante_1.Estudiante, Profesor_1.Profesor, Clases_1.Clases, Asistencia_1.Asistencia],
     synchronize: true,
     logging: true,
-    ssl: {
-        rejectUnauthorized: false,
+    ssl: true,
+    extra: {
+        ssl: {
+            rejectUnauthorized: false,
+        },
     },
 });
 exports.default = pool;
