@@ -19,22 +19,22 @@ Este proyecto es una API RESTful desarrollada utilizando **Node.js** y **Express
 1. Clona el repositorio:
 
    ```bash
-   git clone https://gitlab.com/unicesarcol/devops/devops-scadena-202402/dv-team2/api_asistencia.git
+   git clone https://github.com/Augusto0414/API_ASISTENCIA.git
    ```
 
 2. Navega al directorio del proyecto:
 
    ```bash
-   cd api_asistencia
+   cd API_ASISTENCIA
    ```
 
-3. Crea un archivo `.env` con las variables de entorno necesarias:
+3. Crea un archivo `.env` con las variables de entorno necesarias, ejemplo:
 
    ```bash
    PORT=3000
    DB_USER=postgres
    DB_HOST=db
-   DB_DATABASE=Devops
+   DB_DATABASE=api_asistencia
    DB_PASSWORD=password
    DB_PORT=5432
    ```
