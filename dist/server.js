@@ -8,16 +8,14 @@ const app_1 = __importDefault(require("./app"));
 const config_1 = __importDefault(require("./database/config"));
 const swagger_1 = require("./swagger/swagger");
 (() => {
-    config_1.default
-        .initialize()
-        .then(() => console.log("Initialized pool ok!"))
-        .catch((error) => {
-        console.error("Error initialization pool!");
-        console.error("Details:", error.message);
-        console.error("Stack:", error.stack);
-    });
     (0, swagger_1.SwaggerDoc)(app_1.default);
+    // Start server immediately
     app_1.default.listen(app_1.default.get("port"), () => {
         console.log(`Server is running on port ${app_1.default.get("port")}`);
     });
+    // Initialize database connection in background
+    config_1.default
+        .initialize()
+        .then(() => console.log("Initialized pool ok!"))
+        .catch((err) => console.error("Error initialization pool!", err.message));
 })();
