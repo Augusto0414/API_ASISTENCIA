@@ -12,15 +12,14 @@ FROM node:20 as production
 
 WORKDIR /app
 
-COPY --from=build /app .
+COPY --from=build /app/package*.json ./
 COPY --from=build /app/dist ./dist
+COPY --from=build /app/node_modules ./node_modules
 
-ENV PORT=${PORT}
-ENV DB_USER=${DB_USER}
-ENV DB_HOST=${DB_HOST}
-ENV DB_DATABASE=${DB_DATABASE}
-ENV DB_PASSWORD=${DB_PASSWORD}
-ENV DB_PORT=${DB_PORT}
+ENV PORT=${PORT:-3000}
+ENV NODE_ENV=${NODE_ENV:-development}
+ENV DATABASE_URL=${DATABASE_URL}
+ENV NODE_TLS_REJECT_UNAUTHORIZED=0
 
 EXPOSE 3000
 
